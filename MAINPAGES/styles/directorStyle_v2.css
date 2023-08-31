@@ -1,0 +1,1233 @@
+
+.resizable-widget {
+  position: relative;
+
+  width: 99%;
+  height: 100%;
+  min-width: 300px;
+  min-height: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  margin-right: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resizable-widget:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Стиль для заголовка виджета */
+.widget-header {
+  background-color: #b9d5f1;
+  padding: 8px;
+  cursor: move;
+  display: flex;
+  justify-content: flex-end; /* Изменяем выравнивание на правое */
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.17);
+}
+
+/* Обновленные стили для кнопки закрытия */
+.close-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 10px; /* Изменяем отступ с левой стороны */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-button img {
+  width: 44px;
+  height: 24px;
+}
+
+.close-button:hover {
+  transform: scale(1.2);
+}
+
+/* Стили для нижней панели управления виджетом */
+.widget-images-panel {
+  background-color: #010508;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin-top: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.widget-images-panel img {
+  width: 24px;
+  height: 24px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.widget-images-panel img:hover {
+  transform: scale(1.2);
+}
+  .resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    cursor: nwse-resize; /* Resize cursor */
+    background-color: #000;
+  }
+
+
+  .widget-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 150px;
+    padding: 10px;
+  }
+  
+
+  .resizable-widget {
+    display: none;
+  }
+  
+  .active-widget {
+    display: block;
+  }
+
+  /* Стилизация таблицы */
+  .widget-columns {
+    display: flex;
+    padding: 10px;
+    width: 98%;
+    height: 98%;
+  }
+  
+  .widget-table-column {
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+    height: 80%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .widget-table {
+    font-family: "RobotoFlex", sans-serif;
+    font-size: 16px;
+    color: #242222;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .widget-table th,
+  .widget-table td {
+    padding: 12px 16px;
+    text-align: center;
+  }
+  
+  .widget-table th {
+    position: relative;
+  }
+  
+  .widget-table th::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+  }
+  
+  .widget-table th:nth-child(1),
+  .widget-table td:nth-child(1) {
+    width: 20px;
+  }
+  
+  .widget-table th:nth-child(2),
+  .widget-table td:nth-child(2) {
+    width: 120px;
+  }
+  
+  .widget-table tbody tr {
+    border-bottom: 1px solid #d1d1d1;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .widget-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .widget-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  .widget-table th,
+  .widget-table td {
+    border: none;
+  }
+  
+  .widget-table td.green-row {
+    background-color: #e6f3ec;
+  }
+  
+  .widget-table td.highlight {
+    position: relative;
+  }
+  
+
+  .widget-table tr.red-row {
+    background-color: #fca3a3;
+  }
+ /* .highlight{
+  background-color: aqua;
+  line-height: 1;
+  margin: 0; 
+
+  border-radius: 5px;
+ } */
+
+
+
+.highlight-yellow span {
+  display: inline-block;
+  background-color: rgb(242, 250, 136);
+  padding: 2px 6px; /* Подберите отступы по вашему усмотрению */
+  margin: 0;
+  border-radius: 5px;
+}
+.highlight-green span {
+  display: inline-block;
+  background-color: rgb(57, 247, 130);
+  padding: 2px 6px; /* Подберите отступы по вашему усмотрению */
+  margin: 0;
+  border-radius: 5px;
+}
+.highlight-red span {
+  display: inline-block;
+  background-color: rgb(247, 127, 127);
+  padding: 2px 6px; /* Подберите отступы по вашему усмотрению */
+  margin: 0;
+  border-radius: 5px;
+}
+  .red-row {
+    background-color: rgb(238, 13, 13);
+  }
+  
+  .green-row {
+    background-color: rgb(161, 245, 161);
+    border-radius: 2px;
+  }
+  
+  .yellow-row {
+    background-color: rgb(252, 252, 168);
+  }
+
+
+  .widget-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+
+  }
+  
+
+  .widget-columns {
+    display: flex;
+    padding: 10px;
+    width: 98%;
+    height: 98%;
+  }
+  
+  .widget-table-column {
+    width: 100%;
+    overflow: auto; /* Добавляем прокрутку при необходимости */
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px; /* Скругление углов */
+    border: 1px solid #ccc; /* Обводка */
+    height: 80%; /* Добавляем высоту 100% */
+    
+
+  }
+  
+  .widget-text-column {
+    width: 39%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform: translateY(0);
+  }
+
+  /* //Выпадающая панель """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+   */
+  .widget-text-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .widget-text-top {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .widget-text-top h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .widget-text-content {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.4;
+  }
+  
+  .widget-text-bottom {
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center
+  }
+  
+  .file-panel {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #d1d1d1;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .file-panel h4 {
+    font-size: 16px;
+  }
+  
+  .file-panel img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .widget-images-panel {
+    width: flex;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Анимации */
+    transform: translateY(0); /* Начальное состояние */
+  }
+  
+  .widget-images-panel:hover {
+    transform: translateY(-3px); /* Изменение положения при наведении */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .file-panel {
+    width: 100%;
+    text-align: left;
+  }
+
+
+  .chat-widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    display: none;
+  }
+
+  .chat-widget {
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    border-radius:  10px;
+    position: relative;
+  }
+
+    
+  .chat-header {
+    display: flex;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0Px; /* Уменьшаем вертикальный отступ */
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .chat-content {
+    padding: 10px;
+    
+  }
+  
+  .chat-widget-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: block; /* По умолчанию иконка видна */
+  }
+
+.chat-icon{
+
+ width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: block;
+}
+
+/* Стили для скрытия чата */
+.chat-widget-container .chat-widget {
+  display: none;
+}
+
+.chat-widget-container.active .chat-widget {
+  display: block;
+}
+/* """"""""""""Блок чата"""""""""""""""""""" */
+
+.chat-widget-container {
+
+  height: 10%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.chat-widget {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-content {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.messages-list {
+  list-style: none;
+  padding: 0;
+}
+
+.message {
+  /* padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  max-width: 70%; */
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px; 
+}
+
+.user {
+  border-radius: 10px;
+  background-color: #94f7c6;
+  align-self: flex-end;
+  display: inline-block;
+}
+
+.bot {
+  border-radius: 10px;
+  background-color: #e0dde0;
+  align-self: flex-start;
+  display: inline-block;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+}
+
+#messageInput {
+  flex-grow: 1;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+#sendButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.chat-widget-toggle {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.user .avatar {
+  margin-left: 10px;
+  margin-left: auto;
+}
+
+.bot .avatar {
+  margin-right: 10px;
+
+  margin-right: auto;
+}
+
+.message-content {
+  max-width: 70%;
+  padding: 10px; /* Добавляем отступ вокруг контента сообщения */
+  border-radius: 10px;
+  background-color: #e0e0e0; /* Цвет фона контента сообщения */
+  position: relative;
+  animation: messageWidthAnimation 1s linear; 
+  display: flex; /* Добавляем flex-контейнер */
+  align-items: center; /* Выравниваем элементы вертикально */
+}
+
+@keyframes messageWidthAnimation {
+  from {
+    max-width: 100%; /* Исходная ширина сообщения */
+  }
+  to {
+    max-width: 70%; /* Суженная ширина сообщения */
+  }
+}
+
+.user .message-content {
+  margin-left: auto; /* Сдвигаем контент пользователя вправо */
+  background-color: #94f7c6;
+  flex-direction: row-reverse;
+}
+
+.bot .message-content {
+  margin-right: auto; /* Сдвигаем контент бота влево */
+  flex-direction: row; 
+}
+
+/* """"""""""""Виджет цехов"""""""""""""""""""" */
+.equipmentIcon {
+  width: 80px;
+  height: 80px;
+  border: 2px solid black;
+  font-size: 20px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+
+
+/* Медиа-запрос для адаптивной ширины equipmentIcon */
+
+.lineOfEquipment {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  overflow: scroll;
+  gap: 55px;
+  width: 90%;
+  justify-content: flex-start;
+}
+
+.rightLineOfEquipment {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 55px;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+.centerLineOfEquipment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 55px;
+  width: 90%;
+  justify-content: center;
+}
+
+.TsekhMap {
+  width: 90%;
+  padding: 20px;
+  max-height: 400px; /* Максимальная высота контейнера */
+  overflow-y: auto; /* Вертикальная прокрутка при необходимости */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.backGround-color-red{
+  background-color: #FB6161;
+}
+
+.backGround-color-yellow{
+  background-color: #FEF406;
+}
+
+.backGround-color-green{
+  background-color: #71DC7B;
+}
+
+.backGround-color-grey{
+  background-color: #EBE7E7;
+}
+.blockName {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-right: auto;
+  color: #444343;
+}
+
+/* Мтили карты цехов */
+.factory-map {
+  width: 97%;
+  height: 50vh;
+  padding: 10px;
+  border: 1px solid #e0dde0;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Создает автоматическую сетку с минимальной шириной элемента 200px */
+  gap: 20px; /* Расстояние между элементами */
+  justify-content: space-between;
+  overflow: scroll;
+}
+.workshop {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #222222; /* Добавляем обводку */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.workshop:hover {
+  background-color: #bebebe;
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.workshop-name {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+.workshop-info {
+  font-size: 12px;
+  align-self: center;
+}
+.widget-content{
+  padding: 10px;
+}
+
+
+/* """"""""""""Виджет сотрудников"""""""""""""""""""" */
+
+.WorkersBlock {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#myTableWorker {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#myTableWorker th,
+#myTableWorker td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#myTableWorker th {
+  background-color: #e0e0e0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#myTableWorker th:hover {
+  background-color: #d0d0d0;
+}
+
+.imgCircle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.imgCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.WorkersBlock span {
+  vertical-align: middle;
+}
+
+.WorkersBlock td {
+  border-left: none;
+  border-right: none;
+}
+
+.WorkersBlock tr:last-child td {
+  border-bottom: none;
+}
+
+.WorkersBlock td:last-child {
+  border-right: none;
+}
+
+.WorkersBlock tbody tr[data-target]:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/*№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ Стили панели виджетов*№№№№№№№№№№№№№№№№№№№*/
+/* План выполнения заказов */
+
+.container {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  margin-bottom: 60px;
+  overflow: hidden;
+
+}
+
+/* Стиль для заголовков с тенью */
+.workshop-title1, .projects_name_list, .TaskWorkShopTask.tasks_name_list {
+  cursor: pointer;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Добавляем плавные переходы */
+}
+
+.workshop-title1 {
+  height: 10px; /* Устанавливаем высоту 40px */
+  font-size: 14px;
+
+  margin-bottom: 0; /* Убираем нижний отступ */
+}
+
+.projects1 {
+  /* ... остальные стили ... */
+  margin-top: 0; /* Убираем верхний отступ */
+  overflow: scroll;
+}
+.active {
+  background-color: #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при активации */
+}
+
+/* Стили для списков и подсписков */
+.projects1, .sub-projects1, .sub-task-projects1 {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+}
+
+/* Стиль для элементов задач */
+.TaskWorkShopTask {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.GreenTask {
+  background-color: #d0f3d0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.BlueInfo {
+  background-color: #cce0ff;
+}
+
+.YellowTask {
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.RedTask {
+  background-color: #fdd4d4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для описания задач и даты выполнения */
+.tasks-info, .task-info {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+  margin-top: 5px;
+}
+
+.GrayInfo {
+  background-color: #f2f2f2;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar img {
+  padding-top: 5px;
+  width: 40px; /* Размер аватарки */
+  height: 40px;
+  border-radius: 50%; /* Для создания круглой аватарки */
+  justify-content: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  color: #000000;
+
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px; /* Отступ между аватаркой и деталями пользователя */
+}
+
+.user-name{
+  margin: 0;
+  color: #000000; /* Изменяем цвет имени пользователя */
+
+}
+
+.user-status {
+  color: #2c2c2c; /* Цвет для статуса */
+}
+.user-text-color {
+  color: #050505; /* Замените на желаемый цвет */
+}
+.user-id {
+  margin: 0;
+  font-size: 14px;
+  color: #000000; /* Серый цвет для табельного номера */
+}
+.with-margin {
+  margin-right: 10px; /* Добавляем отступ справа 10 пикселей */
+}
+.icon-and-text {
+  display: flex;
+  align-items: center;
+  height: 10px; /* Устанавливаем высоту 20px */
+}
+
+.icon-and-text img {
+  margin-right: 10px; /* Отступ между иконкой и надписью */
+}
+
+.TaskBasicText.icon-text {
+  font-size: 16px;
+  margin: 0; /* Убираем отступы по умолчанию у параграфа */
+
+}
+
+.arrow-picture {
+  width: 20px; /* Устанавливаем ширину 20px */
+  height: 10px; /* Устанавливаем высоту 10px */
+} /* Устанавливаем высоту 20px */
+.left-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 520px; /* Добавьте нужный вам отступ слева */
+}
+
+.frame {
+  background-color: #ffffff; /* Изменяем цвет фона */
+  height: 60px;
+
+
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+/* """""""""""""""""""""""""""""Стили планов""""""""""""""""""""""""""""""""""""""""" */
+.plans {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  height: 99%;
+  margin-bottom: 60px;
+  
+}
+
+.plan-content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 120px;
+  margin-bottom: 20px;
+}
+
+.plan-title {
+  margin: 0;
+  font-size: 24px;
+  color: #333333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.plan-title:hover {
+  color: #768efa; /* Измените цвет по вашему желанию */
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.progress-bar, .sub-progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+}
+
+.sub-progress-bar {
+  background-color: #71DC7B;
+}
+
+.progress-value, .sub-progress-value {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.sub-projects {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333333;
+  display: none;
+  border-collapse: collapse;
+}
+
+.sub-projects th, .sub-projects td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sub-projects th {
+  font-weight: bold;
+}
+
+.sub-projects td:last-child {
+  text-align: center;
+}
+
+.visible {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plan {
+  margin-bottom: 20px; /* Добавляем нижний отступ для отступа от панели */
+}
+
+#draggableHeader {
+  cursor: grab;
+}
+
+/* Виджет список вопросов */
+  .question-list {
+      list-style-type: none;
+      padding: 10px;
+  }
+  .question-list li:hover {
+      background-color: #f0f0f0; /* Цвет подсветки при наведении */
+  }
+  .question-list li {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      cursor: pointer;
+  }
+  .question-title {
+      font-weight: bold;
+      padding-left: 10px;
+  }
+  .question-details {
+      font-size: 12px;
+      color: #666;
+      padding-left: 10px;
+  }
+
+  .widget-heading {
+    padding-left: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+
+    .action-button {
+    padding: 8px 12px;
+    background-color: #ddd;
+    color: #666;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+  }
+    .action-button-question {
+    padding: 8px 12px;
+    background-color: #ddd;
+    color: #666;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .action-button:hover {
+      background-color: #f0f0f0; /* Цвет подсветки при наведении */
+  }
+
+  .main-container {
+      display: flex;
+  }
+
+  .widget-container{
+      display: flex;
+  }
+
+  .task-info {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 0 10px;
+      display: none;
+      width: 39%;
+      box-sizing: border-box;
+      flex-direction: column;
+      height: 80%;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transform: translateY(0);
+  }
+
+    .task-info.active {
+        display: block;
+    }
+
+    .task-info h4 {
+        margin-top: 0;
+    }
+
+    /* Конец Виджет список вопросов */
+
+/* Виджет перечень файлов от проектантов */
+    .kanban-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      flex: 0 0 60%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-left: 10px;
+      align-items: baseline;
+  }
+  .kanban-column {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      margin: 0 10px;
+      border-radius: 10px;
+  }
+  .column-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+  .task-list {
+      list-style-type: none;
+      padding: 0;
+  }
+  .task-item {
+      position: relative;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      border-radius: 10px;
+  }
+  .task-item:hover {
+      background-color: #e1e1e1;
+  }
+  .task-details {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 300px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+  }
+  .task-item:hover .task-details {
+      display: block;
+  }
+  .task-actions {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .task-action {
+      background-color: #ddd;
+      color: #666;
+      cursor: pointer;
+      padding: 10px;
+      margin: 10px;
+  }
+
+  .task-action:hover {
+      background-color: #f0f0f0; /* Цвет подсветки при наведении */
+  }
+
+  /* Конец Виджет перечень файлов от проектантов */
+
+    /* Стили для названия задачи */
+    .task-item {
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .task-item.active {
+        background-color: #a7e6a4;
+    }

@@ -1,0 +1,107 @@
+.projects1, .sub-projects1, .sub-task-projects1 {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+}
+
+/* Стиль для элементов задач */
+.TaskWorkShopTask {
+  padding: 10px;
+  border: 1px solid #070707;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.GreenTask {
+  background-color: #d0f3d0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.BlueInfo {
+  background-color: #cce0ff;
+}
+
+.YellowTask {
+  background-color: #f8e5ac;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.RedTask {
+  background-color: #fdd4d4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для описания задач и даты выполнения */
+.tasks-info, .task-info {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+  margin-top: 5px;
+}
+
+.GrayInfo {
+  background-color: #f2f2f2;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar img {
+  width: 40px; /* Размер аватарки */
+  height: 40px;
+  border-radius: 50%; /* Для создания круглой аватарки */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px; /* Отступ между аватаркой и деталями пользователя */
+}
+
+.user-name{
+  margin: 0;
+  color: #000000; /* Изменяем цвет имени пользователя */
+}
+
+.user-status {
+  color: #2c2c2c; /* Цвет для статуса */
+}
+.user-text-color {
+  color: #050505; /* Замените на желаемый цвет */
+}
+.user-id {
+  margin: 0;
+  font-size: 14px;
+  color: #000000; /* Серый цвет для табельного номера */
+}
+.with-margin {
+  margin-right: 10px; /* Добавляем отступ справа 10 пикселей */
+}
+.icon-and-text {
+  display: flex;
+  align-items: center;
+  height: 10px; /* Устанавливаем высоту 20px */
+}
+
+.icon-and-text img {
+  margin-right: 10px; /* Отступ между иконкой и надписью */
+}
+
+.TaskBasicText.icon-text {
+  font-size: 16px;
+  margin: 0; /* Убираем отступы по умолчанию у параграфа */
+}
+
+.arrow-picture {
+  width: 20px; /* Устанавливаем ширину 20px */
+  height: 10px; /* Устанавливаем высоту 10px */
+} /* Устанавливаем высоту 20px */

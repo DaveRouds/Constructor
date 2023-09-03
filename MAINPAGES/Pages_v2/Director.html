@@ -17,19 +17,20 @@
     <img class="logo" src="../../img/logo.png" alt="Logo" >
      <!--Полоска виджетов-->
      <div class="vidgetLine">
-      <button type="button" data-widget="widget1" class="func activeButton" data-target="wnd1"> Ежедневник </button>
-      <button type="button" data-widget="widget2" class="func" data-target="wnd2"> Перечень файлов от проектантов </button>
-      <button type="button" data-widget="widget3" class="func" data-target="wnd3"> Список вопросов </button>
-      <!-- <button type="button" data-widget="widget5" class="func" data-target="wnd5"> Производство </button> -->
+
+         <!-- Горизонтальное выпадающее меню с виджетами -->
+        <div class="widget-dropdown">
+          <select id="widget-select" class="horizontal">
+            <option value="widget1" >Ежедневник</option>
+            <option value="widget2">Перечень файлов от проектантов</option>
+            <option value="widget3">Список вопросов</option>
+            <!-- Добавьте другие виджеты в виде дополнительных <option> по аналогии -->
+          </select>
+        </div>
+
     </div>
 
-    <!-- <div class="vidgetLine">
-      <button type="button" data-widget="widget1" class="func activeButton" data-target="wnd1"> <img src="../..//img/proizvodstvo.png" class="proizvodstvoImg"> </button>
-      <button type="button" data-widget="widget2" class="func " data-target="wnd2"> <img src="../..//img/finance.png" class="financeImg"> </button>
-      <button type="button" data-widget="widget3"  class="func" data-target="wnd3"> <img src="../..//img/planirovanie.png" class="planirovanieImg"> </button>
-      <button type="button" data-widget="widget4" class="func" data-target="wnd4"> <img src="../..//img/personal.avif" class="personalImg"> </button>
-      <button type="button" data-widget="widget5" class="func" data-target="wnd5"> <img src="../..//img/Ezhednevnik.png" class="ezhednevnikImg"> </button>
-  </div> -->
+
 </div>
     <img class="logo-2" src="../../img/logo.png" alt="Logo" >
         <!-- Аватарка и имя пользователя -->
@@ -62,7 +63,6 @@
  <!--Сами виджеты-->
 
     <div class="widget-container ">
-
 
   <div class="resizable-widget active-widget" id="widget1">
     <div class="widget-header">
@@ -151,61 +151,14 @@
 
 
   </div>
- <!--виджет Цехов -->
-
-  <!-- <div class="resizable-widget" id="widget5">
-    <div class="widget-header">
-      <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
-    </div>
-    <div class="container">
-      <!-- Widget content goes here -->
-      <!-- Схема цеха -->
-
-
-        <!-- <span class="blockName">Схема цехов</span>
-        <hr style="padding: 1px; width:99%;"/>
-        <div class="TsekhMap">
-          <div class="lineOfEquipment">
-            <div class="equipmentIcon backGround-color-green">1</div>
-            <div class="equipmentIcon backGround-color-yellow">2</div>
-            <div class="equipmentIcon backGround-color-yellow">4</div>
-            <div class="equipmentIcon backGround-color-green">5</div>
-          </div>
-   
-          <div class="centerLineOfEquipment">
-            
-            <div class="equipmentIcon backGround-color-yellow">4</div>
-            <div class="equipmentIcon backGround-color-green">5</div>
-          </div>
-          <div class="lineOfEquipment">
-            <div class="equipmentIcon backGround-color-yellow">15</div>
-            <div class="equipmentIcon backGround-color-gryellowey">16</div>
-          </div>
-        </div>
-      </div>
- <!--нижняя панель управления виджетом-->
- <!-- <div class="widget-images-panel">
-  <img src="../../img/settings_2.png" alt="Иконка настроек" class="settings-icon">
-  <img src="../../img/planirovanie.png" alt="Иконка настроек" class="settings-icon">
-  <img src="../../img/proizvodstvo.png" alt="Иконка настроек" class="settings-icon">
-  <img src="../../img/phone.svg" alt="Иконка настроек" class="settings-icon">
-   <img src="../../img/search.png" alt="Иконка настроек" class="settings-icon">
-</div>
-
-    <div class="resize-handle"></div>
-  </div> --> 
-
   
- <!--виджет управления персоналом-->
-
+ <!--виджет списка с вопросами-->
 
 <div class="resizable-widget" id="widget3">
   <div class="widget-header">
     <span class="blockName">Список вопросов</span>
     <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
   </div>
-
-      <div class="container">
 
       <!-- Widget content goes here -->
         <ul class="question-list">
@@ -230,7 +183,7 @@
             <button class="action-button-question">Редактировать</button>
         </div>
 
-            </div>
+
         
 
    <!--нижняя панель управления виджетом-->
@@ -261,7 +214,7 @@
 
      <!--Виджет чего -то-->
 
-     <div class="resizable-widget" id="widget2">
+     <div class="resizable-widget active-widget" id="widget2">
       <div class="widget-header">
         <span class="blockName">Перечень файлов от проектантов</span>
         <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
@@ -390,6 +343,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../scripts/directorScript_v2.js" ></script>
+<script src="../scripts/constructorScripts.js" ></script>
 
 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css"rel="stylesheet" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>

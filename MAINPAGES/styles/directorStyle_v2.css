@@ -1,11 +1,7 @@
 
 .resizable-widget {
-  position: relative;
-
   width: 99%;
   height: 100%;
-  min-width: 300px;
-  min-height: 600px;
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
@@ -13,11 +9,13 @@
   display: flex;
   margin-right: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
 }
 
 .resizable-widget:hover {
   transform: scale(1.01);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 /* Стиль для заголовка виджета */
@@ -368,13 +366,12 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    
     display: none;
   }
 
   .chat-widget {
     width: 400px;
-    height: 400px;
+    height: 390px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -1231,3 +1228,78 @@
     .task-item.active {
         background-color: #a7e6a4;
     }
+
+/* Стили для горизонтального выпадающего меню */
+.widget-dropdown {
+  display: inline-block;
+  position: relative;
+  font-family: Arial, sans-serif; /* Шрифт, на ваш выбор */
+  margin-top: 10px;
+}
+
+.widget-dropdown select {
+  width: 300px; /* Увеличиваем ширину для умещения длинных названий */
+  padding: 5px 10px; /* Отступы */
+  border: 1px solid #ccc; /* Граница */
+  border-radius: 4px; /* Скругленные углы */
+  background-color: #fff; /* Фон */
+  cursor: pointer; /* Изменение курсора при наведении */
+  appearance: none; /* Убираем стандартное стилизированное отображение в некоторых браузерах */
+  font-size: 16px; /* Увеличиваем размер шрифта */
+}
+
+/* Скрываем стрелку стандартного выпадающего списка */
+.widget-dropdown select::-ms-expand {
+  display: none;
+}
+
+/* Скрытые опции меню */
+.widget-dropdown select option:not(:first-child) {
+  padding: 5px 10px; /* Отступы */
+  cursor: pointer; /* Изменение курсора */
+  background-color: #fff; /* Фон */
+  color: #333; /* Цвет текста */
+  font-size: 16px; /* Увеличиваем размер шрифта */
+}
+
+/* Стили для опций меню при наведении */
+.widget-dropdown select option:not(:first-child):hover {
+  background-color: #f0f0f0; /* Цвет фона при наведении */
+}
+
+/* При выборе опции меню */
+.widget-dropdown select option:not(:first-child):checked {
+  background-color: #f0f0f0; /* Цвет фона для выбранной опции */
+}
+
+/* Стили для виджетов и их содержимого */
+#widget1 {
+    /* Ваши стили здесь */
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 49%; /* Пример: задаем ширину 50% */
+    height: 50vh; /* Пример: задаем высоту 50% экрана */
+    /*z-index: 1;*/
+}
+
+#widget2 {
+    /* Ваши стили здесь */
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 49.5%; /* Пример: задаем ширину 50% */
+    height: 50vh; /* Пример: задаем высоту 50% экрана */
+    /*z-index: 1;*/
+}
+
+#widget3 {
+    position: absolute;
+    left: 5px;
+    right: 330px;
+    width: calc(100% - 335px); /* Вычитаем отступы слева и справа из ширины */
+    height: 40vh;
+    top: 1000%; /* Сдвигаем виджет вниз на половину высоты экрана */
+    transform: translateY(78%);
+    /*z-index: 1;*/
+}

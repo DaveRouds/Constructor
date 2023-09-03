@@ -1,72 +1,9 @@
-// const widget = document.getElementById('draggable-widget');
-// const header = widget.querySelector('.widget-header');
-// const closeButton = widget.querySelector('.close-button');
-
-// let isDragging = false;
-// let offsetX, offsetY;
-
-// header.addEventListener('mousedown', (e) => {
-//   isDragging = true;
-//   offsetX = e.clientX - widget.getBoundingClientRect().left;
-//   offsetY = e.clientY - widget.getBoundingClientRect().top;
-// });
-
-// document.addEventListener('mousemove', (e) => {
-//   if (!isDragging) return;
-
-//   const newX = e.clientX - offsetX;
-//   const newY = e.clientY - offsetY;
-
-//   widget.style.left = `${newX}px`;
-//   widget.style.top = `${newY}px`;
-// });
-
-// document.addEventListener('mouseup', () => {
-//   isDragging = false;
-// });
-
-// closeButton.addEventListener('click', () => {
-//   widget.style.display = 'none';
-// });
-
-// const resizer = document.getElementById('resizable-widget');
-// const resizeIcons = resizer.querySelectorAll('.resize-icon');
-
-// resizer.addEventListener('mouseenter', () => {
-//   resizeIcons.forEach(icon => {
-//     icon.style.opacity = 1;
-//   });
-// });
-
-// resizer.addEventListener('mouseleave', () => {
-//   resizeIcons.forEach(icon => {
-//     icon.style.opacity = 0;
-//   });
-// });
-//изминение размера виджета при открытии нового
-
-// function openNewWidget() {
-//   const widgetContainer = document.querySelector('.widget-container');
-//   const newWidget = document.createElement('div');
-//   newWidget.className = 'resizable-widget active-widget';
-//   newWidget.innerHTML = '<!-- ... Внутренности нового виджета ... -->';
-
-//   widgetContainer.appendChild(newWidget);
-
-//   const activeWidgets = document.querySelectorAll('.active-widget');
-//   const widgetWidthPercentage = 100 / (activeWidgets.length);
-
-//   activeWidgets.forEach((widget, index) => {
-//     widget.style.width = `${widgetWidthPercentage}%`;
-//     widget.style.transform = `translateX(${index * widgetWidthPercentage}%)`;
-//   });
-// }
 
 // Размер виджета
 function setupWidget(widgetId) {
   const widget = document.getElementById(widgetId);
   const resizeHandle = widget.querySelector('.resize-handle');
-  
+
   const widgetHeader = widget.querySelector('.widget-header');
   const closeButton = widget.querySelector('.close-button');
 
@@ -122,50 +59,51 @@ widgetIds.forEach(widgetId => {
   setupWidget(widgetId);
 });
 
-// Панель виджетов
-const widgetIcons = document.querySelectorAll('.func');
-const widgets = document.querySelectorAll('.resizable-widget');
+// // Панель виджетов
+// const widgetIcons = document.querySelectorAll('.func');
+// const widgets = document.querySelectorAll('.resizable-widget');
+//
+// widgetIcons.forEach(icon => {
+//   const widgetId = icon.getAttribute('data-widget');
+//   const widget = document.getElementById(widgetId);
+//
+//   icon.addEventListener('click', () => {
+//     if (widget.style.display === 'none' || widget.style.display === "") {
+//       widget.style.display = 'block';
+//     } else {
+//       widget.style.display = 'none';
+//     }
+//   });
+// });
+//
+// const widgetButtons = document.querySelectorAll('.widget-header button');
+//
+// widgetButtons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     const widgetContainer = button.closest('.widget-container');
+//     const widgets = widgetContainer.querySelectorAll('.resizable-widget');
+//
+//     widgets.forEach(widget => {
+//       widget.classList.remove('active-widget');
+//     });
+//
+//     const widget = button.closest('.resizable-widget');
+//     widget.classList.add('active-widget');
+//   });
+// });
+//
+// const buttons = document.querySelectorAll('.func');
+//
+// buttons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     if (button.classList.contains('activeButton')) {
+//       button.classList.remove('activeButton');
+//     } else {
+//       button.classList.add('activeButton');
+//     }
+//   });
+// });
 
-widgetIcons.forEach(icon => {
-  const widgetId = icon.getAttribute('data-widget');
-  const widget = document.getElementById(widgetId);
-
-  icon.addEventListener('click', () => {
-    if (widget.style.display === 'none' || widget.style.display === "") {
-      widget.style.display = 'block';
-    } else {
-      widget.style.display = 'none';
-    }
-  });
-});
-
-const widgetButtons = document.querySelectorAll('.widget-header button');
-
-widgetButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const widgetContainer = button.closest('.widget-container');
-    const widgets = widgetContainer.querySelectorAll('.resizable-widget');
-
-    widgets.forEach(widget => {
-      widget.classList.remove('active-widget');
-    });
-
-    const widget = button.closest('.resizable-widget');
-    widget.classList.add('active-widget');
-  });
-});
-
-const buttons = document.querySelectorAll('.func');
-
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    if (button.classList.contains('activeButton')) {
-      button.classList.remove('activeButton');
-    } else {
-      button.classList.add('activeButton');
-    }
-  });
-});
 
 //чат
 
@@ -186,75 +124,7 @@ function setupChatWidget() {
   // });
 }
 setupChatWidget();
-// function setupChatMover(chatWidgetId) {
-//   const chatWidget = document.getElementById(chatWidgetId);
-//   const chatHeader = chatWidget.querySelector('.chat-header');
-  
-//   let isDragging = false;
-//   let initialX, initialY;
-//   let initialLeft, initialTop;
 
-//   chatHeader.addEventListener('mousedown', (e) => {
-//     isDragging = true;
-//     initialX = e.clientX;
-//     initialY = e.clientY;
-//     initialLeft = parseFloat(getComputedStyle(chatWidget).left);
-//     initialTop = parseFloat(getComputedStyle(chatWidget).top);
-//     e.preventDefault();
-//   });
-  
-//   document.addEventListener('mousemove', (e) => {
-//     if (isDragging) {
-//       const deltaX = e.clientX - initialX;
-//       const deltaY = e.clientY - initialY;
-//       chatWidget.style.left = `${initialLeft + deltaX}px`;
-//       chatWidget.style.top = `${initialTop + deltaY}px`;
-//     }
-//   });
-  
-//   document.addEventListener('mouseup', () => {
-//     isDragging = false;
-//   });
-// }
-// const chatWidgetId = 'draggableHeader'; // Замените на ID вашего чат-виджета
-// setupChatMover(chatWidgetId);
-// Вызов функции для настройки перемещения чата
-
-
-
-
-//симуляция чата
-// document.addEventListener("DOMContentLoaded", function () {
-//   const chatContent = document.querySelector(".chat-content");
-//   const messageInput = document.getElementById("messageInput");
-//   const sendButton = document.getElementById("sendButton");
-
-//   sendButton.addEventListener("click", sendMessage);
-
-//   function sendMessage() {
-//     const messageText = messageInput.value.trim();
-//     if (messageText !== "") {
-//       addMessage("user", messageText); // Отправляем сообщение пользователя
-//       messageInput.value = "";
-//       simulateResponse(); // Симулируем получение ответа
-//     }
-//   }
-
-//   function addMessage(sender, message) {
-//     const messagesList = chatContent.querySelector(".messages-list");
-//     const messageElement = document.createElement("li");
-//     messageElement.classList.add("message", sender);
-//     messageElement.textContent = message;
-//     messagesList.appendChild(messageElement);
-//     chatContent.scrollTop = chatContent.scrollHeight; // Прокручиваем вниз для отображения последнего сообщения
-//   }
-
-//   function simulateResponse() {
-//     setTimeout(function () {
-//       addMessage("bot", "Привет! Как я могу помочь вам?"); // Симулируем ответ бота
-//     }, 1000); // Задержка для эмуляции ответа
-//   }
-// });
 
 //боковая панель у главного виджета ежедневник
 const panelTitle = document.getElementById('panelTitle');
@@ -396,95 +266,43 @@ projects.forEach((project) => {
 
 });
 
-// Скрипты файлов проектанту
+// скрипт выбора элементов в выпадающем меню
+// Находим выпадающий список
+const widgetSelect = document.getElementById('widget-select');
 
-document.addEventListener("DOMContentLoaded", function() {
-        const columns = document.querySelectorAll(".kanban-column");
+// Добавляем обработчик события при изменении значения выпадающего списка
+widgetSelect.addEventListener('change', function () {
+  const selectedWidget = widgetSelect.value;
 
-        columns.forEach(column => {
-            const taskList = column.querySelector(".task-list");
-            const taskCountElement = column.querySelector(".task-count");
+  // Находим выбранное окно
+  const selectedWidgetElement = document.getElementById(selectedWidget);
 
-            taskCountElement.textContent = taskList.children.length;
-        });
-    });
+  // Проверяем, если окно уже отображается, то скрываем его, иначе отображаем
 
-// Скрипты Открытия задач
-
-document.addEventListener("DOMContentLoaded", function() {
-    const taskItems = document.querySelectorAll(".task-item");
-    const taskInfo = document.querySelector(".task-info");
-    const taskInfoTitle = taskInfo.querySelector("h4");
-
-    taskItems.forEach(item => {
-        item.addEventListener("click", function() {
-            taskItems.forEach(task => {
-                task.classList.remove("active");
-            });
-
-            const taskTitle = this.textContent.trim();
-            taskInfoTitle.textContent = taskTitle;
-            taskInfo.classList.add("active");
-            this.classList.add("active");
-        });
-    });
+  if (selectedWidgetElement.style.display === 'none' || selectedWidgetElement.style.display === '') {
+    selectedWidgetElement.style.display = 'block';
+  }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const taskInfo = document.querySelector(".task-info");
-    const taskInfoTitle = taskInfo.querySelector("h4");
 
-    // Создание экземпляров Sortable для каждого списка задач
-    new Sortable(document.getElementById("todo-list"), {
-        group: "kanban",
-        onEnd: function(evt) {
-            updateTaskCount();
-        }
-    });
 
-    new Sortable(document.getElementById("inprogress-list"), {
-        group: "kanban",
-        onEnd: function(evt) {
-            updateTaskCount();
-        }
-    });
+////////////////////////////
+// // Получаем все виджеты
+// const widgets = document.querySelectorAll('.resizable-widget');
+//
+// // Добавляем обработчик клика для каждого виджета
+// widgets.forEach(widget => {
+//   widget.addEventListener('click', () => {
+//     // Удаляем класс "active-widget" у всех виджетов
+//     widgets.forEach(w => {
+//       w.classList.remove('active-widget');
+//     });
+//     // Добавляем класс "active-widget" только к кликнутому виджету
+//     widget.classList.add('active-widget');
+//
+//     // Устанавливаем z-index активного виджета выше других
+//     widget.style.zIndex = '2';
+//   });
+// });
 
-    new Sortable(document.getElementById("done-list"), {
-        group: "kanban",
-        onEnd: function(evt) {
-            updateTaskCount();
-        }
-    });
 
-    // Обновление счетчика задач в каждом столбце
-    function updateTaskCount() {
-        const todoCount = document.querySelectorAll("#todo-list .task-item").length;
-        const inProgressCount = document.querySelectorAll("#inprogress-list .task-item").length;
-        const doneCount = document.querySelectorAll("#done-list .task-item").length;
-
-        document.querySelector(".column-title:nth-child(1) .task-count").textContent = todoCount;
-        document.querySelector(".column-title:nth-child(2) .task-count").textContent = inProgressCount;
-        document.querySelector(".column-title:nth-child(3) .task-count").textContent = doneCount;
-    }
-
-    // Обработчик клика на задачу
-    const taskItems = document.querySelectorAll(".task-item");
-    taskItems.forEach(item => {
-        item.addEventListener("click", function() {
-            taskItems.forEach(task => {
-                task.classList.remove("active");
-            });
-
-            const taskTitle = this.textContent.trim();
-            taskInfoTitle.textContent = taskTitle;
-            taskInfo.classList.add("active");
-            this.classList.add("active");
-
-            if (taskInfo.classList.contains("active")) {
-                taskInfo.classList.remove("active");
-            } else {
-                taskInfo.classList.add("active");
-            }
-        });
-    });
-});

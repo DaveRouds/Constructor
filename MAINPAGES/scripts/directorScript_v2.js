@@ -53,7 +53,7 @@ function setupWidget(widgetId) {
   });
 }
 
-const widgetIds = ['widget1', 'widget2', 'widget3', 'widgetChat'];
+const widgetIds = ['widget1', 'widget2', 'widget3'];
 
 widgetIds.forEach(widgetId => {
   setupWidget(widgetId);
@@ -107,23 +107,6 @@ widgetIds.forEach(widgetId => {
 
 //чат
 
-function setupChatWidget() {
-  const chatWidgetContainer = document.querySelector('.chat-widget-container');
-  const chatWidget = chatWidgetContainer.querySelector('.chat-widget');
-  const chatWidgetToggle = chatWidgetContainer.querySelector('.chat-widget-toggle');
-  const closeButton = chatWidget.querySelector('.close-button-chat');
-
-  chatWidgetToggle.addEventListener('click', () => {
-    chatWidget.style.display = 'block';
-    chatWidgetToggle.style.display = 'none'; // Скрываем иконку
-  });
-
-  // closeButton.addEventListener('click', () => {
-  //   chatWidget.style.display = 'none';
-  //   chatWidgetToggle.style.display = 'block'; // Показываем иконку
-  // });
-}
-setupChatWidget();
 
 
 //боковая панель у главного виджета ежедневник

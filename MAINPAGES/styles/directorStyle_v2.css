@@ -36,7 +36,6 @@
   background: none;
   border: none;
   padding: 0;
-  margin-left: 10px; /* Изменяем отступ с левой стороны */
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -47,6 +46,42 @@
 }
 
 .close-button:hover {
+  transform: scale(1.2);
+}
+
+.collapse-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 10px; /* Изменяем отступ с левой стороны */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.collapse-button img {
+  width: 30px;
+  height: 24px;
+}
+
+.collapse-button:hover {
+  transform: scale(1.2);
+}
+
+.uncollapse-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 10px; /* Изменяем отступ с левой стороны */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.uncollapse-button img {
+  width: 30px;
+  height: 24px;
+}
+
+.uncollapse-button:hover {
   transform: scale(1.2);
 }
 
@@ -1121,13 +1156,13 @@
   }
 
   .task-info {
-      flex: 1;
+      /*flex: 1;*/
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 10px;
       margin: 0 10px;
       display: none;
-      width: 39%;
+      width: 500px;
       box-sizing: border-box;
       flex-direction: column;
       height: 80%;
@@ -1158,6 +1193,7 @@
       border-radius: 10px;
       margin-left: 10px;
       align-items: baseline;
+      flex-grow: 1;
   }
   .kanban-column {
       flex: 1;
@@ -1309,6 +1345,23 @@
     transform: translateY(78%);
     /*z-index: 1;*/
 }
+
+/* Стили для виджета в развернутом состоянии */
+.resizable-widget.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999; /* Устанавливаем виджет поверх остальных элементов */
+  margin: 0; /* Убираем отступы */
+  width: 100%;
+  height: 100%;
+  transform: none; /* Убираем трансформацию */
+}
+
+
+
 .footer {
   background-color: #b9d5f1;
   color: #555; /* Темно-серый текст */

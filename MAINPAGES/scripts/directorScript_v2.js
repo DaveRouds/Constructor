@@ -33,13 +33,23 @@ function setupWidget(widgetId) {
     if (isResizing) {
       const newWidth = originalWidth + (e.clientX - initialResizeX);
       const newHeight = originalHeight + (e.clientY - initialResizeY);
-      widget.style.width = `${newWidth}px`;
-      widget.style.height = `${newHeight}px`;
+
+      // Ограничиваем изменение размера окна до видимой области экрана
+      const maxX = window.innerWidth - widget.offsetLeft;
+      const maxY = window.innerHeight - widget.offsetTop;
+
+      widget.style.width = `${Math.min(maxX, Math.max(100, newWidth))}px`;
+      widget.style.height = `${Math.min(maxY, Math.max(100, newHeight))}px`;
     } else if (isDragging) {
       const newX = e.clientX - initialX;
       const newY = e.clientY - initialY;
-      widget.style.left = `${newX}px`;
-      widget.style.top = `${newY}px`;
+
+      // Ограничиваем перемещение окна до видимой области экрана
+      const maxX = window.innerWidth - widget.offsetWidth;
+      const maxY = window.innerHeight - widget.offsetHeight;
+
+      widget.style.left = `${Math.min(maxX, Math.max(0, newX))}px`;
+      widget.style.top = `${Math.min(maxY, Math.max(0, newY))}px`;
     }
   });
 

@@ -1,21 +1,35 @@
 
 .resizable-widget {
-  width: 99%;
-  height: 100%;
+  /*width: 925px;*/
+  /*height: 480px;*/
+  /*position: absolute;*/
+  margin-right: 10px;
+  min-height: 300px;
+  min-width: 400px;
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
-  margin-right: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
   z-index: 1;
 }
 
+/*.resizable-widget + .resizable-widget {*/
+/*  left: 940px; !* Горизонтальное смещение следующих виджетов *!*/
+/*  margin-left: 10px;*/
+/*}*/
+
+/*.resizable-widget + .resizable-widget + .resizable-widget {*/
+/*  left: 0; !* Вернуть первый виджет в начальную позицию по горизонтали *!*/
+/*  top: 560px; !* Вертикальное смещение третьего виджета (490px для появления снизу) *!*/
+/*  margin-left: 10px;*/
+/*}*/
+
 .resizable-widget:hover {
-  transform: scale(1.01);
+  transform: translateY(-5px);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  z-index: 2;
 }
 
 /* Стиль для заголовка виджета */
@@ -370,7 +384,6 @@
   }
   
   .widget-images-panel {
-    width: flex;
     border: 1px solid #ccc;
     background-color: #ffffff;
     padding: 10px;
@@ -883,6 +896,7 @@
 
 /* Стили для описания задач и даты выполнения */
 .tasks-info, .task-info {
+
   list-style: none;
   padding-left: 20px;
   display: none;
@@ -980,6 +994,7 @@
   padding-left: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   position: relative;
+  z-index: 999;
 }
 
 /* """""""""""""""""""""""""""""Стили планов""""""""""""""""""""""""""""""""""""""""" */
@@ -1174,7 +1189,7 @@
   }
 
     .task-info.active {
-        display: block;
+      display: block;
     }
 
     .task-info h4 {
@@ -1315,36 +1330,36 @@
 }
 
 /* Стили для виджетов и их содержимого */
-#widget1 {
-    /* Ваши стили здесь */
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    width: 49%; /* Пример: задаем ширину 50% */
-    height: 50vh; /* Пример: задаем высоту 50% экрана */
-    /*z-index: 1;*/
-}
+/*#widget1 {*/
+/*    !* Ваши стили здесь *!*/
+/*    position: absolute;*/
+/*    left: 5px;*/
+/*    top: 5px;*/
+/*    width: 49%; !* Пример: задаем ширину 50% *!*/
+/*    height: 50vh; !* Пример: задаем высоту 50% экрана *!*/
+/*    !*z-index: 1;*!*/
+/*}*/
 
-#widget2 {
-    /* Ваши стили здесь */
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    width: 49.5%; /* Пример: задаем ширину 50% */
-    height: 50vh; /* Пример: задаем высоту 50% экрана */
-    /*z-index: 1;*/
-}
+/*#widget2 {*/
+/*    !* Ваши стили здесь *!*/
+/*    position: absolute;*/
+/*    right: 5px;*/
+/*    top: 5px;*/
+/*    width: 49.5%; !* Пример: задаем ширину 50% *!*/
+/*    height: 50vh; !* Пример: задаем высоту 50% экрана *!*/
+/*    !*z-index: 1;*!*/
+/*}*/
 
-#widget3 {
-    position: absolute;
-    left: 5px;
-    right: 330px;
-    width: calc(100% - 335px); /* Вычитаем отступы слева и справа из ширины */
-    height: 40vh;
-    top: 1000%; /* Сдвигаем виджет вниз на половину высоты экрана */
-    transform: translateY(78%);
-    /*z-index: 1;*/
-}
+/*#widget3 {*/
+/*    position: absolute;*/
+/*    left: 5px;*/
+/*    right: 330px;*/
+/*    width: calc(100% - 335px); !* Вычитаем отступы слева и справа из ширины *!*/
+/*    height: 40vh;*/
+/*    top: 1000%; !* Сдвигаем виджет вниз на половину высоты экрана *!*/
+/*    transform: translateY(78%);*/
+/*    !*z-index: 1;*!*/
+/*}*/
 
 /* Стили для виджета в развернутом состоянии */
 .resizable-widget.expanded {
@@ -1353,10 +1368,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 999; /* Устанавливаем виджет поверх остальных элементов */
-  margin: 0; /* Убираем отступы */
-  width: 100%;
-  height: 100%;
+  z-index: 99; /* Устанавливаем виджет поверх остальных элементов */
+  margin-top: 70px;
+  max-height: calc(100% - 360px);
+  margin-left: 10px;
+  max-width: calc(100% - 10px);
   transform: none; /* Убираем трансформацию */
 }
 
@@ -1370,6 +1386,7 @@
   border-top-right-radius: 5px;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); /* Тень внизу */
   transition: background-color 0.3s ease-in-out; /* Анимация смены цвета фона */
+  z-index: 999;
 }
 
 .footer:hover {
@@ -1452,6 +1469,9 @@ body {
 
 /* Оставляем flex-контейнеру футера свободное пространство внизу и уменьшаем высоту футера */
 .footer {
-  margin-top: auto;
-  height: 200px; /* Установите желаемую высоту футера здесь */
+    bottom: 0;
+    position: absolute;
+    margin-top: auto;
+    height: 200px;
+    width: 100%;
 }

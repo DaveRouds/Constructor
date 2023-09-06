@@ -269,23 +269,56 @@ widgetSelect.addEventListener('change', function () {
 
 
 
-////////////////////////////
-// // Получаем все виджеты
-// const widgets = document.querySelectorAll('.resizable-widget');
-//
-// // Добавляем обработчик клика для каждого виджета
-// widgets.forEach(widget => {
-//   widget.addEventListener('click', () => {
-//     // Удаляем класс "active-widget" у всех виджетов
-//     widgets.forEach(w => {
-//       w.classList.remove('active-widget');
-//     });
-//     // Добавляем класс "active-widget" только к кликнутому виджету
-//     widget.classList.add('active-widget');
-//
-//     // Устанавливаем z-index активного виджета выше других
-//     widget.style.zIndex = '2';
-//   });
-// });
 
+// Функция для разворачивания виджета на весь экран
+function expandWidget(widgetId) {
+  const widget = document.getElementById(widgetId);
+
+  // Добавляем класс для развернутого состояния
+  widget.classList.add('expanded');
+}
+
+// Функция для сворачивания виджета обратно в исходное состояние
+function collapseWidget(widgetId) {
+  const widget = document.getElementById(widgetId);
+
+  // Удаляем класс для развернутого состояния
+  widget.classList.remove('expanded');
+}
+
+// Функция для переключения состояния виджета при клике на кнопку
+function toggleFullscreen(widgetId) {
+  const widget = document.getElementById(widgetId);
+
+  if (widget.classList.contains('expanded')) {
+    collapseWidget(widgetId);
+  } else {
+    expandWidget(widgetId);
+  }
+}
+
+// Назначаем обработчик клика на кнопку разворачивания/сворачивания
+const uncollapseButtons = document.querySelectorAll('.uncollapse-button');
+
+uncollapseButtons.forEach(button => {
+  const widgetId = button.closest('.resizable-widget').id;
+  button.addEventListener('click', () => {
+    toggleFullscreen(widgetId);
+  });
+});
+
+
+//Изменение z-index при клике по виджету
+const widgets = document.querySelectorAll('.resizable-widget');
+widgets.forEach(widget => {
+  widget.addEventListener('click', () => {
+    // Уберем активное состояние у всех виджетов
+    widgets.forEach(w => {
+      w.style.zIndex = '1'; // Возвращаем z-index в исходное состояние
+    });
+
+    // Устанавливаем активное состояние и повышаем z-index для текущего виджета
+    widget.style.zIndex = '2'; // Изменяем z-index для активного виджета
+  });
+});
 

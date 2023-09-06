@@ -69,55 +69,10 @@ widgetIds.forEach(widgetId => {
   setupWidget(widgetId);
 });
 
-// // Панель виджетов
-// const widgetIcons = document.querySelectorAll('.func');
-// const widgets = document.querySelectorAll('.resizable-widget');
-//
-// widgetIcons.forEach(icon => {
-//   const widgetId = icon.getAttribute('data-widget');
-//   const widget = document.getElementById(widgetId);
-//
-//   icon.addEventListener('click', () => {
-//     if (widget.style.display === 'none' || widget.style.display === "") {
-//       widget.style.display = 'block';
-//     } else {
-//       widget.style.display = 'none';
-//     }
-//   });
-// });
-//
-// const widgetButtons = document.querySelectorAll('.widget-header button');
-//
-// widgetButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const widgetContainer = button.closest('.widget-container');
-//     const widgets = widgetContainer.querySelectorAll('.resizable-widget');
-//
-//     widgets.forEach(widget => {
-//       widget.classList.remove('active-widget');
-//     });
-//
-//     const widget = button.closest('.resizable-widget');
-//     widget.classList.add('active-widget');
-//   });
-// });
-//
-// const buttons = document.querySelectorAll('.func');
-//
-// buttons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     if (button.classList.contains('activeButton')) {
-//       button.classList.remove('activeButton');
-//     } else {
-//       button.classList.add('activeButton');
-//     }
-//   });
-// });
-
 
 //чат
 
-
+//////
 
 //боковая панель у главного виджета ежедневник
 const panelTitle = document.getElementById('panelTitle');

@@ -9,6 +9,8 @@
 
   <link rel="stylesheet" href="../styles/style.css">
 
+  <link rel="stylesheet" href="../styles/Chat.css">
+
 </head>
 <body>
 <!-- логотипы -->
@@ -26,6 +28,7 @@
             <option value="widget1" >Ежедневник</option>
             <option value="widget2">Перечень файлов от проектантов</option>
             <option value="widget3">Список вопросов</option>
+            <option value="widgetChat">Чат</option>
             <!-- Добавьте другие виджеты в виде дополнительных <option> по аналогии -->
           </select>
         </div>
@@ -270,7 +273,93 @@
       <div class="resize-handle"></div>
     </div>
 
+<!-- чат -->
+
+    <div class="resizable-widget" id="widgetChat">
+      <div class="widget-header">
+        <span class="blockName">Чат</span>
+        <button   type="button" class="collapse-button"><img src="../../img/CollapsButton.png" alt="Collaps"></button>
+        <button   type="button" class="uncollapse-button"><img src="../../img/UncollapsButton.png" alt="Collaps"></button>
+    <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
+      </div>
+
+
+        <div class="person-selector">
+          <div class="persons">
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Виталий Алексеевич</span>
+              <div class="unread-badge">3</div> <!-- Это серый овал с цифрой -->
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Дмитрий Викторович</span>
+              <div class="unread-badge">53</div>
+            </button>
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Иван Иванов</span>
+              <div class="unread-badge">34</div> <!-- Это серый овал с цифрой -->
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Иван Иванов</span>
+
+            </button>
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Иван Иванов</span>
+
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Иван Иванов</span>
+              <div class="unread-badge">4</div>
+            </button>
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Иван Иванов</span>
+              <div class="unread-badge">11</div> <!-- Это серый овал с цифрой -->
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Иван Иванов</span>
+
+            </button>
+          </div>
+
+          <div class="chat-container">
+
+              <div class="chat-messages">
+                <div class="message">
+                  <div class="message-avatar">
+                    <img src="../../img/avatar.png">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-sender"> Виктор</div>
+                    <div class="message-text">Приветики</div>
+                    <div class="message-timestamp">19.42.42</div>
+                  </div>
+                </div>
+              </div>
+
+              <form class="chat-input-form">
+                  <input type="text" class="chat-input" required placeholder="Введите сообщение">
+                  <button type="submit" class="button send-button">Отправить</button>
+              </form>
+
+          </div>
+
+    </div>
+      <div class="resize-handle"></div>
+    </div>
+
 </div>
+
+
+
+
+<!--Конец чата-->
 
     <!--Футор-->
     <div class="footer">
@@ -302,7 +391,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../scripts/directorScript_v2.js" ></script>
 <script src="../scripts/constructorScripts.js" ></script>
-
+<script src="../scripts/chatScript.js"></script>
 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css"rel="stylesheet" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>

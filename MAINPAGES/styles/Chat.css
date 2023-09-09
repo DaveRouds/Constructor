@@ -1,0 +1,231 @@
+/*Chat */
+
+.persons{
+  display: block;
+  max-width: 100%; /* Максимальная ширина для .persons */
+  width: 100%; /* Заполняем всю доступную ширину родительского элемента */
+  min-width: 0;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow-y: scroll;
+  min-width: 250px;
+}
+
+.person-selector {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin: 15px auto 25px 25px;
+  max-width: 100%;
+  width: 99%;
+}
+.persons button {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 95%;
+  text-align: left;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  color: #666666;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative; /* Добавляем относительное позиционирование для позиционирования точки */
+}
+.persons button img {
+  width: 40px; /* Размер аватарки, который вам подходит */
+  height: 40px; /* Размер аватарки, который вам подходит */
+  margin-right: 10px; /* Расстояние между аватаркой и именем */
+}
+.unread-badge {
+  margin-left: 45px;
+  background-color: #ccc; /* Цвет серого овала */
+  color: #fff;
+  border-radius: 30%; /* Делаем овал круглым */
+  width: 20px; /* Размер овала (можно изменить) */
+  height: 20px; /* Размер овала (можно изменить) */
+  font-size: 12px; /* Размер шрифта внутри овала (можно изменить) */
+  position: absolute;
+/* Располагаем овал по вертикали по середине кнопки */
+  right: 10px; /* Отодвигаем овал от правого края кнопки */
+
+  transform: translateX(30%); /* Корректируем положение овала по вертикали */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  border: none;
+  padding: 0.625em;
+  border-radius: 5Px;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+
+.person-selector-button {
+  width: 100%;
+  background-color: #3498db; /* Голубой для кнопок */
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.active-person {
+  background: #08529d;
+}
+
+.chat-container {
+  background: #fff; /* Белый фон контейнера */
+  font-family: 'Roboto', sans-serif;
+  border-radius: 15px; /* Увеличим радиус закругления углов для более мягкого вида */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+  margin: auto;
+  width: 99%; /* Ширина контейнера относительно родительского элемента */
+  max-width: 800px; /* Максимальная ширина контейнера */
+  height: 600px;
+  padding: 20px; /* Добавим немного внутренних отступов для контента */
+}
+.chat-header {
+  margin-bottom: 1em;
+  color: #636363;
+}
+
+.chat-header h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.chat-messages {
+  color: #414040;
+  margin-top: 10px;
+  height: 400px;
+  overflow-y: scroll;
+  padding: 10px; /* Добавим внутренние отступы для контейнера сообщений */
+}
+
+.message {
+  width: 100%;
+  display: flex;
+  margin-bottom: 5px;
+  align-items: flex-end; /* Выравнивание по нижнему краю */
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 5px; /* Отступ снизу для аватарки */
+}
+
+.message-content {
+  min-height: 40px;
+  flex-grow: 1;
+  width: 100%;
+  background-color: #f5f5f5; /* Цвет фона сообщения */
+  border-radius: 15px;
+  padding: 15px; /* Увеличим внутренние отступы для увеличения высоты */
+  margin-bottom: 6px; /* Увеличим нижний отступ для отделения сообщений */
+  position: relative;
+  word-wrap: break-word;
+}
+
+.message-sender {
+  font-weight: bold;
+  margin-bottom: 5px;
+  position: absolute;
+  top: 5px;
+  left:  9px;
+}
+
+.message-text {
+  margin-top: 20px;
+  color: #5a5a5a;
+  font-size: 1em;
+  text-align: left; /* Выравнивание текста по центру */
+}
+.message-timestamp {
+  font-size: 0.75em;
+  text-align: right;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.from-me .message-content {
+  min-height: 30px;
+  flex-grow: 1;
+  width: 100%;
+  background-color: #d1f7d1; /* Зеленоватый фон для Виталия */
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 6px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+
+/* Добавим стили для аватарки, чтобы она выглядела более похожей на Telegram */
+.message-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.message-partner {
+  background-color: #f0f0f0; /* Цвет фона для сообщений партнера */
+  color: #333; /* Цвет текста для сообщений партнера */
+}
+.chat-input-form {
+  display: flex;
+  align-items: center;
+  margin-top: 2em;
+  gap: 0.625em;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.chat-input {
+  padding: 0.625em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+.send-button {
+  background-color: #1c9bef;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.clear-chat-button {
+  display: block;
+  margin: 2.5em auto;
+}
+.message-sender {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: right; /* Выравнивание текста отправителя справа */
+  color: blue; /* Цвет текста отправителя */
+}
+
+#widgetChat.resizable-widget {
+  /* Ваши стили для виджета с id "widgetChat" */
+  width: 50%; /* Например, уменьшим ширину до половины */
+  min-width: 880px;
+  height: 60%;
+  min-height: 680px;
+  /* Другие стили по вашему выбору */
+}

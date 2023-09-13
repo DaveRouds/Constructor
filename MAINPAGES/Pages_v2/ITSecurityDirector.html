@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DirectorShow</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../styles/directorStyle_v2.css">
+
+  <link rel="stylesheet" href="../styles/style.css">
+
+  <link rel="stylesheet" href="../styles/Chat.css">
+
+</head>
+<body>
+<!-- логотипы -->
+  <div class="frame">
+    <div class="director-title">Конструктор</div>
+    <div class="logo-vidget-container">
+    <img class="logo" src="../../img/logo.png" alt="Logo" >
+    <img class="logo-2" src="../../img/logo.png" alt="Logo" >
+     <!--Полоска виджетов-->
+     <div class="vidgetLine">
+
+         <!-- Горизонтальное выпадающее меню с виджетами -->
+        <div class="widget-dropdown">
+          <select id="widget-select" class="horizontal">
+            <option value="widget1" >Ежедневник</option>
+            <option value="widget2">Отдел режима и безопасности</option>
+            <option value="widget3">Отдел информационных технологий</option>
+            <option value="widgetChat">Чат</option>
+            <!-- Добавьте другие виджеты в виде дополнительных <option> по аналогии -->
+          </select>
+        </div>
+
+    </div>
+
+
+</div>
+
+        <!-- Аватарка и имя пользователя -->
+
+    <div class="user-profile">
+
+     <img src="../../img/settings_2.png" alt="Иконка настроек" class="settings-icon">
+     <img src="../../img/avatar.png" alt="Аватар пользователя" class ="avatar">
+     <span class="user-name">Имя пользователя</span>
+     <img src="../../img/Arrowdown.png" alt="Иконка шеврон" class="chevron-icon">
+
+    </div>
+    <!--Полоска виджетов-->
+
+</div>
+
+  <!--Область окон-->
+            <div class="vidgetContext">
+                <div class="funcDiscription1" id="wnd1"></div>
+                <div class="funcDiscription2" id="wnd2"></div>
+                <div class="funcDiscription3" id="wnd3"></div>
+                <div class="funcDiscription4" id="wnd4"></div>
+                <div class="funcDiscription5 activeBlock" id="wnd5"></div>
+            </div>
+ <!--Сами виджеты-->
+
+    <div class="widget-container ">
+
+  <div class="resizable-widget active-widget" id="widget1">
+    <div class="widget-header">
+      <span class="blockName">Ежедневник</span>
+        <button   type="button" class="collapse-button"><img src="../../img/CollapsButton.png" alt="Collaps"></button>
+        <button   type="button" class="uncollapse-button"><img src="../../img/UncollapsButton.png" alt="Collaps"></button>
+      <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
+    </div>
+
+    <div class="widget-columns">
+      <div class="widget-table-column">
+      <table class="widget-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Кому</th>
+            <th>От кого</th>
+            <th>Статус</th>
+            <th>Дата</th>
+            <th>Тип</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td><input type="checkbox"></td>
+            <td>Директору</td>
+            <td>Перв. Зам</td>
+            <td class="highlight-green"><span>Активно</span></td>
+            <td>01.01.01</td>
+            <td>Служебная</td>
+          </tr>
+          <!-- <tr  class="green-row"> -->
+            <tr  >
+            <td><input type="checkbox"></td>
+            <td>Перв. зам</td>
+            <td>Директор</td>
+            <td class="highlight-yellow"><span>Не активно</span></td>
+            <td>02.01.01</td>
+            <td>Поручение</td>
+          </tr>
+          <tr  >
+            <td><input type="checkbox"></td>
+            <td>Перв. зам</td>
+            <td>Директор</td>
+            <td class="highlight-green"><span>Aктивно</span></td>
+            <td>02.01.01</td>
+            <td>Поручение</td>
+          </tr>
+          <tr  >
+            <td><input type="checkbox"></td>
+            <td>Перв. зам</td>
+            <td>Директор</td>
+            <td class="highlight-red"><span>Не активно</span></td>
+            <td>02.01.01</td>
+            <td>Поручение</td>
+          </tr>
+          <!-- Добавьте другие строки с данными -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="widget-text-column" id="widgetTextColumn">
+
+      <div class="widget-text-top">
+        <h4 id="panelTitle">Заголовок</h4>
+        <p id="panelContent">Содержимое...</p>
+      </div>
+      <div class="widget-text-bottom">
+        <div class="file-panel">
+          <h4>Файл</h4>
+          <img src="your-image-path.png" alt="pdf">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+    <div class="resize-handle"></div>
+
+
+  </div>
+
+
+ <!--виджет управления персоналом-->
+
+
+   <!--Виджет финансов-->
+
+
+   <!--нижняя панель управления виджетом-->
+
+
+     <!--Виджет Отдел режима и безопасноти-->
+
+     <div class="resizable-widget active-widget" id="widget2">
+      <div class="widget-header">
+        <span class="blockName">Отдел режима и безопасноти</span>
+          <button   type="button" class="collapse-button"><img src="../../img/CollapsButton.png" alt="Collaps"></button>
+        <button   type="button" class="uncollapse-button"><img src="../../img/UncollapsButton.png" alt="Collaps"></button>
+        <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
+      </div>
+
+      <div class="container">
+            <!-- Widget content goes here -->
+
+        </div>
+
+      <!--нижняя панель управления виджетом-->
+
+      <div class="resize-handle"></div>
+    </div>
+
+
+        <!--виджет Отдел информационных технологий-->
+
+    <div class="resizable-widget" id="widget3">
+      <div class="widget-header">
+        <span class="blockName">Отдел информационных технологий</span>
+                  <button   type="button" class="collapse-button"><img src="../../img/CollapsButton.png" alt="Collaps"></button>
+            <button   type="button" class="uncollapse-button"><img src="../../img/UncollapsButton.png" alt="Collaps"></button>
+        <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
+      </div>
+
+      <div class="container">
+            <!-- Widget content goes here -->
+
+        </div>
+
+        <!--нижняя панель управления виджетом-->
+
+      <div class="resize-handle"></div>
+    </div>
+
+<!-- чат -->
+
+    <div class="resizable-widget" id="widgetChat">
+      <div class="widget-header">
+        <span class="blockName">Чат</span>
+        <button   type="button" class="collapse-button"><img src="../../img/CollapsButton.png" alt="Collaps"></button>
+        <button   type="button" class="uncollapse-button"><img src="../../img/UncollapsButton.png" alt="Collaps"></button>
+    <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
+      </div>
+
+
+        <div class="person-selector">
+          <div class="persons">
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Виталий Алексеевич</span>
+              <div class="unread-badge">3</div> <!-- Это серый овал с цифрой -->
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Дмитрий Викторович</span>
+              <div class="unread-badge">53</div>
+            </button>
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Иван Иванов</span>
+              <div class="unread-badge">34</div> <!-- Это серый овал с цифрой -->
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Иван Иванов</span>
+
+            </button>
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Иван Иванов</span>
+
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Иван Иванов</span>
+              <div class="unread-badge">4</div>
+            </button>
+            <button class="button person-selector-button active-person" id="john-selector">
+              <img src="../../img/avatar.png" alt="Аватар Виталия">
+              <span>Иван Иванов</span>
+              <div class="unread-badge">11</div> <!-- Это серый овал с цифрой -->
+            </button>
+            <button class="button person-selector-button" id="jane-selector">
+              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
+              <span>Иван Иванов</span>
+
+            </button>
+          </div>
+
+          <div class="chat-container">
+
+              <div class="chat-messages">
+                <div class="message">
+                  <div class="message-avatar">
+                    <img src="../../img/avatar.png">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-sender"> Виктор</div>
+                    <div class="message-text">Приветики</div>
+                    <div class="message-timestamp">19.42.42</div>
+                  </div>
+                </div>
+              </div>
+
+              <form class="chat-input-form">
+                  <input type="text" class="chat-input" required placeholder="Введите сообщение">
+                  <button type="submit" class="button send-button">Отправить</button>
+              </form>
+
+          </div>
+
+    </div>
+      <div class="resize-handle"></div>
+    </div>
+
+</div>
+
+
+<!--Конец чата-->
+
+    <!--Футор-->
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="../../img/logo.png" alt="Логотип">
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023. Все права защищены.</p>
+      </div>
+    </div>
+<!--Футор-->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../scripts/directorScript_v2.js" ></script>
+<script src="../scripts/constructorScripts.js" ></script>
+<script src="../scripts/chatScript.js"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css"rel="stylesheet" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<!-- <script src="scripts/WorkshopTask.js"></script>  -->
+</html>

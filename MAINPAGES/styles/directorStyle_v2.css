@@ -140,12 +140,12 @@
     width: 150px;
     padding: 10px;
   }
-  
+
 
   .resizable-widget {
     display: none;
   }
-  
+
   .active-widget {
     display: block;
   }
@@ -157,7 +157,7 @@
     width: 98%;
     height: 98%;
   }
-  
+
   .widget-table-column {
     width: 100%;
     overflow: auto;
@@ -169,7 +169,7 @@
     background-color: #ffffff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .widget-table {
     font-family: "RobotoFlex", sans-serif;
     font-size: 16px;
@@ -179,17 +179,17 @@
     border-radius: 10px;
     overflow: hidden;
   }
-  
+
   .widget-table th,
   .widget-table td {
     padding: 12px 16px;
     text-align: center;
   }
-  
+
   .widget-table th {
     position: relative;
   }
-  
+
   .widget-table th::after {
     content: "";
     position: absolute;
@@ -199,43 +199,43 @@
     height: 2px;
     background-color: #ccc;
   }
-  
+
   .widget-table th:nth-child(1),
   .widget-table td:nth-child(1) {
     width: 20px;
   }
-  
+
   .widget-table th:nth-child(2),
   .widget-table td:nth-child(2) {
     width: 120px;
   }
-  
+
   .widget-table tbody tr {
     border-bottom: 1px solid #d1d1d1;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .widget-table tbody tr:hover {
     background-color: #f5f5f5;
   }
-  
+
   .widget-table tbody tr:last-child {
     border-bottom: none;
   }
-  
+
   .widget-table th,
   .widget-table td {
     border: none;
   }
-  
+
   .widget-table td.green-row {
     background-color: #e6f3ec;
   }
-  
+
   .widget-table td.highlight {
     position: relative;
   }
-  
+
 
   .widget-table tr.red-row {
     background-color: #fca3a3;
@@ -243,7 +243,7 @@
  /* .highlight{
   background-color: aqua;
   line-height: 1;
-  margin: 0; 
+  margin: 0;
 
   border-radius: 5px;
  } */
@@ -274,12 +274,12 @@
   .red-row {
     background-color: rgb(238, 13, 13);
   }
-  
+
   .green-row {
     background-color: rgb(161, 245, 161);
     border-radius: 2px;
   }
-  
+
   .yellow-row {
     background-color: rgb(252, 252, 168);
   }
@@ -292,7 +292,7 @@
     padding: 10px;
 
   }
-  
+
 
   .widget-columns {
     display: flex;
@@ -300,7 +300,7 @@
     width: 98%;
     height: 98%;
   }
-  
+
   .widget-table-column {
     width: 100%;
     overflow: auto; /* Добавляем прокрутку при необходимости */
@@ -309,10 +309,10 @@
     border-radius: 10px; /* Скругление углов */
     border: 1px solid #ccc; /* Обводка */
     height: 80%; /* Добавляем высоту 100% */
-    
+
 
   }
-  
+
   .widget-text-column {
     width: 39%;
     padding: 10px;
@@ -335,19 +335,19 @@
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   }
-  
+
   .widget-text-top {
     padding: 15px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .widget-text-top h4 {
     font-size: 18px;
     margin-bottom: 5px;
   }
-  
+
   .widget-text-content {
     flex-grow: 1;
     padding: 10px;
@@ -355,7 +355,7 @@
     color: #555555;
     line-height: 1.4;
   }
-  
+
   .widget-text-bottom {
     flex-grow: 1;
     overflow: hidden;
@@ -363,7 +363,7 @@
     align-items: flex-end;
     justify-content: center
   }
-  
+
   .file-panel {
     padding: 10px;
     background-color: #f5f5f5;
@@ -374,16 +374,16 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .file-panel h4 {
     font-size: 16px;
   }
-  
+
   .file-panel img {
     width: 20px;
     height: 20px;
   }
-  
+
   .widget-images-panel {
     border: 1px solid #ccc;
     background-color: #ffffff;
@@ -399,12 +399,12 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Анимации */
     transform: translateY(0); /* Начальное состояние */
   }
-  
+
   .widget-images-panel:hover {
     transform: translateY(-3px); /* Изменение положения при наведении */
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   }
-  
+
   .file-panel {
     width: 100%;
     text-align: left;
@@ -430,7 +430,7 @@
     position: relative;
   }
 
-    
+
   .chat-header {
     display: flex;
     height: 20px;
@@ -439,12 +439,12 @@
     padding: 0Px; /* Уменьшаем вертикальный отступ */
     border-bottom: 1px solid #ccc;
   }
-  
+
   .chat-content {
     padding: 10px;
-    
+
   }
-  
+
   .chat-widget-toggle {
     display: flex;
     align-items: center;
@@ -522,7 +522,7 @@
   max-width: 70%; */
   display: flex;
   align-items: flex-end;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .user {
@@ -595,7 +595,7 @@
   border-radius: 10px;
   background-color: #e0e0e0; /* Цвет фона контента сообщения */
   position: relative;
-  animation: messageWidthAnimation 1s linear; 
+  animation: messageWidthAnimation 1s linear;
   display: flex; /* Добавляем flex-контейнер */
   align-items: center; /* Выравниваем элементы вертикально */
 }
@@ -617,7 +617,7 @@
 
 .bot .message-content {
   margin-right: auto; /* Сдвигаем контент бота влево */
-  flex-direction: row; 
+  flex-direction: row;
 }
 
 /* """"""""""""Виджет цехов"""""""""""""""""""" */
@@ -1330,37 +1330,6 @@
   background-color: #f0f0f0; /* Цвет фона для выбранной опции */
 }
 
-/* Стили для виджетов и их содержимого */
-/*#widget1 {*/
-/*    !* Ваши стили здесь *!*/
-/*    position: absolute;*/
-/*    left: 5px;*/
-/*    top: 5px;*/
-/*    width: 49%; !* Пример: задаем ширину 50% *!*/
-/*    height: 50vh; !* Пример: задаем высоту 50% экрана *!*/
-/*    !*z-index: 1;*!*/
-/*}*/
-
-/*#widget2 {*/
-/*    !* Ваши стили здесь *!*/
-/*    position: absolute;*/
-/*    right: 5px;*/
-/*    top: 5px;*/
-/*    width: 49.5%; !* Пример: задаем ширину 50% *!*/
-/*    height: 50vh; !* Пример: задаем высоту 50% экрана *!*/
-/*    !*z-index: 1;*!*/
-/*}*/
-
-/*#widget3 {*/
-/*    position: absolute;*/
-/*    left: 5px;*/
-/*    right: 330px;*/
-/*    width: calc(100% - 335px); !* Вычитаем отступы слева и справа из ширины *!*/
-/*    height: 40vh;*/
-/*    top: 1000%; !* Сдвигаем виджет вниз на половину высоты экрана *!*/
-/*    transform: translateY(78%);*/
-/*    !*z-index: 1;*!*/
-/*}*/
 
 /* Стили для виджета в развернутом состоянии */
 .resizable-widget.expanded {
@@ -1373,23 +1342,28 @@
   height:  100%;
   z-index: 99; /* Устанавливаем виджет поверх остальных элементов */
   margin-top: 70px;
-  max-height: calc(100% - 360px);
+  max-height: calc(100% - 300px);
   margin-left: 10px;
   max-width: calc(100% - 10px);
   transform: none; /* Убираем трансформацию */
 }
 
-
-
 .footer {
   background-color: #b9d5f1;
   color: #555; /* Темно-серый текст */
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   border-top-left-radius: 5px; /* Скругление верхних углов */
   border-top-right-radius: 5px;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); /* Тень внизу */
   transition: background-color 0.3s ease-in-out; /* Анимация смены цвета фона */
-  z-index: 999;
+}
+
+/* Оставляем flex-контейнеру футера свободное пространство внизу и уменьшаем высоту футера */
+.footer {
+    bottom: 0;
+    position: absolute;
+    margin-top: auto;
+    width: 100%;
 }
 
 .footer:hover {
@@ -1406,7 +1380,7 @@
 }
 
 .footer-logo img {
-  width: 100px;
+  width: 70px;
   height: auto;
   border-radius: 10px; /* Скругление углов логотипа */
 }
@@ -1442,10 +1416,12 @@
 }
 
 .footer-bottom {
+  background-color:#8ac3fc ;
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
 }
+
 .director-title {
   position: absolute;
   top: 50%;
@@ -1470,11 +1446,81 @@ body {
   flex-direction: column;
 }
 
-/* Оставляем flex-контейнеру футера свободное пространство внизу и уменьшаем высоту футера */
-.footer {
-    bottom: 0;
-    position: absolute;
-    margin-top: auto;
-    height: 200px;
-    width: 100%;
+/*Стили списка сотрудников*/
+
+.workshop-title1 {
+  height: 10px; /* Устанавливаем высоту 40px */
+  font-size: 14px;
+
+  margin-bottom: 0; /* Убираем нижний отступ */
+}
+
+.projects1 {
+  /* ... остальные стили ... */
+  margin-top: 0; /* Убираем верхний отступ */
+  overflow: scroll;
+}
+.active {
+  /*background-color: #ddd;*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при активации */
+}
+
+/* Стили для списков и подсписков */
+.projects1, .sub-projects1, .sub-task-projects1 {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+}
+
+/* Стиль для элементов задач */
+.TaskWorkShopTask {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.GreenTask {
+  background-color: #d0f3d0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.BlueInfo {
+  background-color: #cce0ff;
+}
+
+.YellowTask {
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.RedTask {
+  background-color: #fdd4d4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 200px; /* Ширина квадрата */
+  height: 200px; /* Высота квадрата */
+  margin: 10px; /* Расстояние между квадратами */
+  border: 1px solid #ccc; /* Граничная линия */
+  text-align: center;
+  padding: 10px;
+}
+
+.square img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.square p {
+  margin-top: 10px;
 }

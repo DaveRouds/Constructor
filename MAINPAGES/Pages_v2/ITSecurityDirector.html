@@ -11,6 +11,9 @@
 
   <link rel="stylesheet" href="../styles/Chat.css">
 
+  <link rel="stylesheet" href="../styles/ITSecurityDirectorStyle.css">
+
+
 </head>
 <body>
 <!-- логотипы -->
@@ -300,89 +303,48 @@
     </div>
 
 <!-- чат -->
-
-    <div class="resizable-widget" id="widgetChat">
-      <div class="widget-header">
-        <span class="blockName">Чат</span>
-        <button   type="button" class="collapse-button"><img src="../../img/CollapsButton.png" alt="Collaps"></button>
-        <button   type="button" class="uncollapse-button"><img src="../../img/UncollapsButton.png" alt="Collaps"></button>
-    <button   type="button" class="close-button"><img src="../../img/Close-button.png" alt="Close"></button>
-      </div>
-
-
-        <div class="person-selector">
-          <div class="persons">
-            <button class="button person-selector-button active-person" id="john-selector">
-              <img src="../../img/avatar.png" alt="Аватар Виталия">
-              <span>Виталий Алексеевич</span>
-              <div class="unread-badge">3</div> <!-- Это серый овал с цифрой -->
-            </button>
-            <button class="button person-selector-button" id="jane-selector">
-              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
-              <span>Дмитрий Викторович</span>
-              <div class="unread-badge">53</div>
-            </button>
-            <button class="button person-selector-button active-person" id="john-selector">
-              <img src="../../img/avatar.png" alt="Аватар Виталия">
-              <span>Иван Иванов</span>
-              <div class="unread-badge">34</div> <!-- Это серый овал с цифрой -->
-            </button>
-            <button class="button person-selector-button" id="jane-selector">
-              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
-              <span>Иван Иванов</span>
-
-            </button>
-            <button class="button person-selector-button active-person" id="john-selector">
-              <img src="../../img/avatar.png" alt="Аватар Виталия">
-              <span>Иван Иванов</span>
-
-            </button>
-            <button class="button person-selector-button" id="jane-selector">
-              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
-              <span>Иван Иванов</span>
-              <div class="unread-badge">4</div>
-            </button>
-            <button class="button person-selector-button active-person" id="john-selector">
-              <img src="../../img/avatar.png" alt="Аватар Виталия">
-              <span>Иван Иванов</span>
-              <div class="unread-badge">11</div> <!-- Это серый овал с цифрой -->
-            </button>
-            <button class="button person-selector-button" id="jane-selector">
-              <img src="../../img/avatar.png" alt="Аватар Дмитрия">
-              <span>Иван Иванов</span>
-
-            </button>
-          </div>
-
-          <div class="chat-container">
-
-              <div class="chat-messages">
-                <div class="message">
-                  <div class="message-avatar">
-                    <img src="../../img/avatar.png">
-                  </div>
-                  <div class="message-content">
-                    <div class="message-sender"> Виктор</div>
-                    <div class="message-text">Приветики</div>
-                    <div class="message-timestamp">19.42.42</div>
-                  </div>
-                </div>
-              </div>
-
-              <form class="chat-input-form">
-                  <input type="text" class="chat-input" required placeholder="Введите сообщение">
-                  <button type="submit" class="button send-button">Отправить</button>
-              </form>
-
-          </div>
-
-    </div>
-      <div class="resize-handle"></div>
-    </div>
-
+<div class="resizable-widget" id="widgetChat">
+<div class="widget-header">
+<span class="blockName">Чат</span>
+<button class="collapse-button" type="button"><img alt="Collaps" src="../../img/CollapsButton.png"/></button>
+<button class="uncollapse-button" type="button"><img alt="Collaps" src="../../img/UncollapsButton.png"/></button>
+<button class="close-button" type="button"><img alt="Close" src="../../img/Close-button.png"/></button>
 </div>
-
-
+<div class="person-selector">
+<div class="persons">
+<button class="button person-selector-button active-person">
+<img alt="Аватар Виталия" src="../../img/avatar.png"/>
+<span>Виталий Алексеевич</span>
+<!-- <div class="unread-badge">3</div> Это серый овал с цифрой -->
+</button>
+<button class="button person-selector-button">
+<img alt="Аватар Дмитрия" src="../../img/avatar.png"/>
+<span>Дмитрий Викторович</span>
+<!-- <div class="unread-badge">53</div>  -->
+</button>
+<button class="button person-selector-button" id="ThisButtom">
+<img alt="Аватар Дмитрия" src="../../img/avatar.png"/>
+<span>Тест Тестеров</span>
+<!-- <div class="unread-badge">3</div>  -->
+</button>
+</div>
+<div class="chat-container">
+<div class="chat-messages">
+<div class="message">
+<div class="message-avatar">
+<img src="../../img/avatar.png"/>
+</div>
+</div>
+</div>
+<form class="chat-input-form">
+<input class="chat-input" placeholder="Введите сообщение" required="" type="text"/>
+<button class="button send-button" type="submit">Отправить</button>
+</form>
+</div>
+</div>
+<div class="resize-handle"></div>
+</div>
+</div>
 <!--Конец чата-->
 
 <!--Футор-->

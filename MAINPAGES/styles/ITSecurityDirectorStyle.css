@@ -1,0 +1,83 @@
+/*Стили отдел информационных технологий*/
+
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 200px; /* Ширина квадрата */
+  height: 200px; /* Высота квадрата */
+  margin: 10px; /* Расстояние между квадратами */
+  border: 1px solid #ccc; /* Граничная линия */
+  text-align: center;
+  padding: 10px;
+}
+
+.square img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.square p {
+  margin-top: 10px;
+}
+
+/*Стили отдел режима и безопасности */
+
+/*Стили списка сотрудников*/
+
+.workshop-title1 {
+  height: 10px; /* Устанавливаем высоту 40px */
+  font-size: 14px;
+
+  margin-bottom: 0; /* Убираем нижний отступ */
+}
+
+.projects1 {
+  /* ... остальные стили ... */
+  margin-top: 0; /* Убираем верхний отступ */
+  overflow: scroll;
+}
+.active {
+  background-color: #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при активации */
+}
+
+/* Стили для списков и подсписков */
+.projects1, .sub-projects1, .sub-task-projects1 {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+}
+
+/* Стиль для элементов задач */
+.TaskWorkShopTask {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.GreenTask {
+  background-color: #d0f3d0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.BlueInfo {
+  background-color: #cce0ff;
+}
+
+.YellowTask {
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.RedTask {
+  background-color: #fdd4d4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+

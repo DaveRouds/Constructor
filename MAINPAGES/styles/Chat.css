@@ -9,13 +9,14 @@
   border-radius: 5px;
   overflow-y: scroll;
   min-width: 250px;
+  margin-right: 10px;
 }
 
 .person-selector {
   height: fit-content;
   display: flex;
   justify-content: center;
-  margin: 15px auto 25px 25px;
+  margin: 15px;
   max-width: 100%;
   width: 99%;
 }
@@ -89,16 +90,16 @@
   margin: auto;
   width: 99%; /* Ширина контейнера относительно родительского элемента */
   max-width: 800px; /* Максимальная ширина контейнера */
-  height: 600px;
-  padding: 20px; /* Добавим немного внутренних отступов для контента */
-}
-.chat-header {
-  margin-bottom: 1em;
-  color: #636363;
+  height: 99%;
+  margin-right:15px;
+  padding: 0px; /* Добавим немного внутренних отступов для контента */
 }
 
+
 .chat-header h2 {
-  font-size: 1.25em;
+  margin-bottom: 2.5rem;
+  margin-top: 10px;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -107,7 +108,7 @@
   margin-top: 10px;
   height: 400px;
   overflow-y: scroll;
-  padding: 10px; /* Добавим внутренние отступы для контейнера сообщений */
+  padding: 20px; /* Добавим внутренние отступы для контейнера сообщений */
 }
 
 .message {

@@ -1,8 +1,7 @@
 
 .resizable-widget {
   position: relative;
-  /*width: 925px;*/
-  /*height: 480px;*/
+
   /*position: absolute;*/
   margin-right: 10px;
   min-height: 300px;
@@ -14,19 +13,53 @@
   display: flex;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
+  overflow-y: auto;
   z-index: 1;
 }
 
-/*.resizable-widget + .resizable-widget {*/
-/*  left: 940px; !* Горизонтальное смещение следующих виджетов *!*/
-/*  margin-left: 10px;*/
-/*}*/
+.widget-container {
+  position: relative;
+  overflow-y: auto;
+  align-items: flex-start;
+  padding: 10px;
+  display: grid;
+}
 
-/*.resizable-widget + .resizable-widget + .resizable-widget {*/
-/*  left: 0; !* Вернуть первый виджет в начальную позицию по горизонтали *!*/
-/*  top: 560px; !* Вертикальное смещение третьего виджета (490px для появления снизу) *!*/
-/*  margin-left: 10px;*/
-/*}*/
+#widget1 {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+#widget3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#widget2{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#widget4 {
+  grid-column: 1;
+  grid-row: 3;
+
+}
+#widgetChat  {
+  grid-column: 2;
+  grid-row: 3;
+}
+#widgetGraph{
+  min-width: 600px;
+
+  grid-column: 1;
+  grid-row: 4;
+}
+#ControlWidget{
+
+  grid-column: 2;
+  grid-row: 4;
+}
 
 .resizable-widget:hover {
   transform: translateY(-5px);
@@ -284,16 +317,6 @@
     background-color: rgb(252, 252, 168);
   }
 
-
-  .widget-container {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    padding: 10px;
-
-  }
-
-
   .widget-columns {
     display: flex;
     padding: 10px;
@@ -429,7 +452,6 @@
     border-radius:  10px;
     position: relative;
   }
-
 
   .chat-header {
     display: flex;
@@ -995,7 +1017,6 @@
   padding-left: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 999;
 }
 
 /* """""""""""""""""""""""""""""Стили планов""""""""""""""""""""""""""""""""""""""""" */
@@ -1164,10 +1185,6 @@
   }
 
   .main-container {
-      display: flex;
-  }
-
-  .widget-container{
       display: flex;
   }
 
@@ -1348,6 +1365,19 @@
   transform: none; /* Убираем трансформацию */
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Устанавливаем для body минимальную высоту, чтобы футер всегда был внизу */
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .footer {
   background-color: #b9d5f1;
   color: #555; /* Темно-серый текст */
@@ -1416,7 +1446,6 @@
 }
 
 .footer-bottom {
-  background-color:#8ac3fc ;
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
@@ -1433,94 +1462,5 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Тень текста */
 
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-/* Устанавливаем для body минимальную высоту, чтобы футер всегда был внизу */
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
-/*Стили списка сотрудников*/
-
-.workshop-title1 {
-  height: 10px; /* Устанавливаем высоту 40px */
-  font-size: 14px;
-
-  margin-bottom: 0; /* Убираем нижний отступ */
-}
-
-.projects1 {
-  /* ... остальные стили ... */
-  margin-top: 0; /* Убираем верхний отступ */
-  overflow: scroll;
-}
-.active {
-  /*background-color: #ddd;*/
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при активации */
-}
-
-/* Стили для списков и подсписков */
-.projects1, .sub-projects1, .sub-task-projects1 {
-  list-style: none;
-  padding-left: 20px;
-  display: none;
-}
-
-/* Стиль для элементов задач */
-.TaskWorkShopTask {
-  padding: 10px;
-  border: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.GreenTask {
-  background-color: #d0f3d0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.BlueInfo {
-  background-color: #cce0ff;
-}
-
-.YellowTask {
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.RedTask {
-  background-color: #fdd4d4;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.square-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.square {
-  width: 200px; /* Ширина квадрата */
-  height: 200px; /* Высота квадрата */
-  margin: 10px; /* Расстояние между квадратами */
-  border: 1px solid #ccc; /* Граничная линия */
-  text-align: center;
-  padding: 10px;
-}
-
-.square img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  margin: 0 auto;
-}
-
-.square p {
-  margin-top: 10px;
-}
